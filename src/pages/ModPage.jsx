@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 import Header from '../components/Header/Header.jsx';
 import Button from '../components/Button/Button.jsx';
 import Card from '../components/Card/Card.jsx';

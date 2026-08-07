@@ -47,7 +47,7 @@ const mods = [
   { label: 'Modrinth', href: 'https://modrinth.com/mod/critfall' },
   { label: 'CurseForge', href: 'https://www.curseforge.com/minecraft/mc-mods/critfall' },
 ],
-  
+
 ];
 
 export function getMod(slug) {
