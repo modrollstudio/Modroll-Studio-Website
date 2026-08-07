@@ -26,38 +26,38 @@ const navLinks = [
 ];
 
 const footerLinks = [
-  { href: 'https://github.com/modrollstudio', label: 'GitHub' },
+  { href: 'https://github.com/modrollstudio', label: 'GitHub', newTab: true },
   { href: 'mailto:hello@modroll.studio', label: 'hello@modroll.studio' },
 ];
 
 export default function App() {
   return (
     <>
-      <a className="skip-link" href="#main">Skip to content</a>
+      <a className='skip-link' href='#main'>
+        Skip to content
+      </a>
       <ScrollToTop />
       <Navbar
         logo={
-          <Link to="/" aria-label="Modroll Studio — home">
+          <Link to='/' aria-label='Modroll Studio — home'>
             <Logo />
           </Link>
         }
         links={navLinks}
       >
-        <Button size="sm" variant="ghost" href="https://github.com/modrollstudio">
+        <Button size='sm' variant='ghost' href='https://github.com/modrollstudio' target='_blank' rel='nofollow noopener'>
+          <span className='sr-only'>Opens in new tab</span>
           GitHub
         </Button>
       </Navbar>
-      <main id="main">
+      <main id='main'>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/mods/:slug" element={<ModPage />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/mods/:slug' element={<ModPage />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </main>
-      <Footer
-        links={footerLinks}
-        text={`© ${new Date().getFullYear()} Modroll Studio · Tabletop dice mods for Minecraft`}
-      />
+      <Footer links={footerLinks} text={`© ${new Date().getFullYear()} Modroll Studio · Tabletop dice mods for Minecraft`} />
     </>
   );
 }

@@ -6,7 +6,13 @@ export default function Footer({ text, links = [] }) {
       <ul className={styles.links}>
         {links.map((link) => (
           <li key={link.href}>
-            <a href={link.href}>{link.label}</a>
+            <a
+              href={link.href}
+              {...(link.newTab ? { target: "_blank", rel: "nofollow noopener"} : {})}
+            >
+              {link.newTab && ( <span className="sr-only">Opens in new tab</span> )}
+              {link.label}
+            </a>
           </li>
         ))}
       </ul>
