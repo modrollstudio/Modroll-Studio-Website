@@ -12,7 +12,7 @@ const roadmap = [
   },
   {
     title: 'Initiative',
-    status: 'ongoing',
+    status: 'next',
     note: 'Dice-driven turn order for Minecraft combat. Other features are welcome to be requested.',
   },
   {
