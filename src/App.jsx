@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link, Route, Routes, useLocation } from 'react-router-dom';
+import { Link, Route, Routes, useLocation } from 'react-router';
 import Navbar from './components/Navbar/Navbar.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import Logo from './components/Logo/Logo.jsx';
