@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link, Route, Routes, useLocation } from 'react-router-dom';
+import { Link, Route, Routes, useLocation } from 'react-router';
 import Navbar from './components/Navbar/Navbar.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import Logo from './components/Logo/Logo.jsx';
@@ -26,7 +26,7 @@ const navLinks = [
 ];
 
 const footerLinks = [
-  { href: 'https://github.com/modrollstudio', label: 'GitHub' },
+  { href: 'https://github.com/modrollstudio', label: 'GitHub', newTab: true },
   { href: 'mailto:hello@modroll.studio', label: 'hello@modroll.studio' },
 ];
 
@@ -43,8 +43,9 @@ export default function App() {
         }
         links={navLinks}
       >
-        <Button size="sm" variant="ghost" href="https://github.com/modrollstudio">
+        <Button size="sm" variant="ghost" href="https://github.com/modrollstudio" target="_blank" rel="noopener noreferrer">
           GitHub
+          <span className="sr-only">Opens in new tab</span>
         </Button>
       </Navbar>
       <main id="main">

@@ -47,8 +47,9 @@ export default function Home() {
           <Button size="lg" to="/mods/critfall">
             Explore Critfall
           </Button>
-          <Button size="lg" variant="ghost" href="https://github.com/modrollstudio">
+          <Button size="lg" variant="ghost" href="https://github.com/modrollstudio" target="_blank" rel="noopener noreferrer">
             GitHub
+            <span className="sr-only">Opens in new tab</span>
           </Button>
         </div>
       </Header>
