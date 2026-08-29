@@ -8,10 +8,10 @@ export default function Footer({ text, links = [] }) {
           <li key={link.href}>
             <a
               href={link.href}
-              {...(link.newTab ? { target: "_blank", rel: "nofollow noopener"} : {})}
+              {...(link.newTab ? { target: "_blank", rel: "noopener noreferrer"} : {})}
             >
-              {link.newTab && ( <span className="sr-only">Opens in new tab</span> )}
               {link.label}
+              {link.newTab && ( <span className="sr-only">Opens in new tab</span> )}
             </a>
           </li>
         ))}
