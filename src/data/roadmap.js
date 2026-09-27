@@ -20,6 +20,11 @@ const roadmap = [
     status: `planned`,
     note: `Ability checks and saving throws as well as other RPG mechanics. Other features are welcome to be requested.`,
   },
+  {
+    title: `Dungeon Crawl`,
+    status: `planned`,
+    note: `Dice-driven dungeon crawl adventure where each room's contents and exits are rolled as you enter them, built on Critfall's combat engine.`,
+  },
 ];
 
 export default roadmap;
