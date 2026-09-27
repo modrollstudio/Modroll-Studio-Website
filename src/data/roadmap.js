@@ -1,7 +1,7 @@
 // status must be 'released', 'next', or 'planned' — anything else renders unstyled
 const roadmap = [
   {
-    title: 'Critfall 0.2.0',
+    title: 'Critfall 0.2.6',
     status: 'released',
     note: 'd20 attack rolls, dice damage, crits and fumbles for Minecraft 1.21.1 — out now on GitHub.',
   },
