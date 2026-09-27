@@ -9,7 +9,7 @@ const mods = [
     icon: critfallIcon,
     tagline: 'Tabletop-style d20 combat for Minecraft.',
     status: 'Released',
-    version: '0.2.0',
+    version: '0.2.6',
     mcVersion: '1.21.1',
     loaders: ['NeoForge', 'Fabric'],
     description: [
