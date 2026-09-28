@@ -29,8 +29,9 @@ npm run preview  # serve the production build locally
   copy, features, links) creates its nav entry, home card, and `/mods/:slug`
   page. Two manual steps remain: put the mod's icon image in `src/assets/`
   (imported at the top of mods.js), and add the page URL to
-  `public/sitemap.xml`. A link with `todo: true` renders as "coming soon" until
-  its `href` goes live.
+  `public/sitemap.xml`. Install links only show once `status` is `'Released'`;
+  a link with `todo: true` renders as "coming soon" until its `href` goes live.
+  `repo` (optional) adds a GitHub button to the page's contribute/contact block.
 - `src/data/roadmap.js` — the "road ahead" timeline on the home page: one entry
   per milestone with `status` of `released`, `next`, or `planned`.
 - `src/pages/` — Home, the data-driven ModPage template, and the 404 page.
