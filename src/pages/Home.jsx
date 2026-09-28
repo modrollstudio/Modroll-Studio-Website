@@ -10,7 +10,7 @@ import TypingText from '../components/TypingText/TypingText.jsx';
 import FadeInOnScroll from '../components/FadeInOnScroll/FadeInOnScroll.jsx';
 import FloatingEmbers from '../components/FloatingEmbers/FloatingEmbers.jsx';
 import Roadmap from '../components/Roadmap/Roadmap.jsx';
-import mods from '../data/mods.js';
+import mods, { statusLabel } from '../data/mods.js';
 import roadmap from '../data/roadmap.js';
 import heroBg from '../assets/hero.webp';
 import styles from './Home.module.scss';
@@ -71,13 +71,11 @@ export default function Home() {
               >
                 <p className={styles.featuredSummary}>{mod.description[0]}</p>
                 <div className={styles.cardMeta}>
-                  <Badge tone="accent">
-                    {mod.status} · v{mod.version}
-                  </Badge>
-                  {mod.loaders.map((loader) => (
+                  <Badge tone="accent">{statusLabel(mod)}</Badge>
+                  {mod.loaders?.map((loader) => (
                     <Badge key={loader}>{loader}</Badge>
                   ))}
-                  <Badge>MC {mod.mcVersion}</Badge>
+                  {mod.mcVersion && <Badge>MC {mod.mcVersion}</Badge>}
                 </div>
               </Card>
             </FadeInOnScroll>
