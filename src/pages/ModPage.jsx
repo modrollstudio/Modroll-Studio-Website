@@ -99,7 +99,7 @@ export default function ModPage() {
             {screenshots.map(([path, src], i) => (
               <FadeInOnScroll key={path} delay={(i % 2) * 90}>
                 <a href={src} target="_blank" rel="noreferrer">
-                  <img className={styles.screenshot} src={src} alt={path.split('/').pop().split('.')[0]} loading="lazy" />
+                  <img className={styles.screenshot} src={src} alt={path.split('/').pop().split('.')[0]} width={1920} height={1080} loading="lazy" />
                 </a>
               </FadeInOnScroll>
             ))}
