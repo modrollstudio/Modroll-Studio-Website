@@ -1,4 +1,5 @@
-// status must be 'released', 'next', or 'planned' — anything else renders unstyled
+// status must be 'released', 'ongoing', 'next', 'planned', 'paused' or abandoned — anything else renders unstyled
+// Check under Roadmap.jsx for what each displays
 const roadmap = [
   {
     title: `Critfall 0.2.6`,
@@ -12,7 +13,7 @@ const roadmap = [
   },
   {
     title: `Initiative`,
-    status: `next`,
+    status: `ongoing`,
     note: `Dice-driven turn order for Minecraft combat. Other features are welcome to be requested.`,
   },
   {
