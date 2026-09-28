@@ -33,7 +33,8 @@ npm run preview  # serve the production build locally
   a link with `todo: true` renders as "coming soon" until its `href` goes live.
   `repo` (optional) adds a GitHub button to the page's contribute/contact block.
 - `src/data/roadmap.js` — the "road ahead" timeline on the home page: one entry
-  per milestone with `status` of `released`, `next`, or `planned`.
+  per milestone with `status` of `released`, `ongoing`, `next`, `planned`, 
+  `paused` or `abandoned`.
 - `src/pages/` — Home, the data-driven ModPage template, and the 404 page.
 - `src/styles/global.scss` — theme. All colors live as CSS custom properties in
   the `:root` block here — change a color once there and every component picks
