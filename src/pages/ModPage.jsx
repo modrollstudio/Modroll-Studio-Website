@@ -12,6 +12,12 @@ import { getMod } from '../data/mods.js';
 import NotFound from './NotFound.jsx';
 import styles from './ModPage.module.scss';
 
+// Get all screenshots from src/assets/screenshots/<mod slug name>/.
+const allScreenshots = import.meta.glob('../assets/screenshots/*/*.{png,jpg,webp}', {
+  eager: true,
+  import: 'default',
+});
+
 const heroStyle = {
   position: 'relative',
   overflow: 'hidden',
@@ -36,6 +42,9 @@ export default function ModPage() {
 
   const liveLinks = mod.links.filter((link) => !link.todo);
   const pendingLinks = mod.links.filter((link) => link.todo);
+  const screenshots = Object.entries(allScreenshots).filter(([path]) =>
+    path.includes(`/screenshots/${mod.slug}/`),
+  );
 
   return (
     <>
@@ -83,7 +92,19 @@ export default function ModPage() {
       </Section>
 
       <Section width="xl" title="Screenshots">
-        <p className={styles.note}>Screenshots coming soon.</p>
+        {screenshots.length > 0 ? (
+          <Grid cols={2} gap="md">
+            {screenshots.map(([path, src], i) => (
+              <FadeInOnScroll key={path} delay={(i % 2) * 90}>
+                <a href={src} target="_blank" rel="noreferrer">
+                  <img className={styles.screenshot} src={src} alt={path.split('/').pop().split('.')[0]} loading="lazy" />
+                </a>
+              </FadeInOnScroll>
+            ))}
+          </Grid>
+        ) : (
+          <p className={styles.note}>Screenshots coming soon.</p>
+        )}
       </Section>
 
       <Section title={`Get ${mod.name}`}>
