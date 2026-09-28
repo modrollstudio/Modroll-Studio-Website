@@ -24,6 +24,12 @@
   flex-wrap: wrap;
   gap: $space-md;
 }
+.screenshot {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
 .note {
   margin: $space-md 0 0;
   color: $color-muted;

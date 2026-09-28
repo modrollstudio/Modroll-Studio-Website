@@ -2,6 +2,8 @@ import critfallIcon from '../assets/critfall-icon.png';
 
 // A mod also needs an icon in src/assets and a URL entry in public/sitemap.xml;
 // description[0] doubles as the home card summary.
+// Only status 'Released' shows the install links; any other status (e.g. 'In development')
+// hides them. version, mcVersion, loaders, features, links and repo are all optional.
 const mods = [
   {
     slug: 'critfall',
@@ -42,13 +44,21 @@ const mods = [
         text: 'Java API with pre/post roll events, RollService, and a dice expression parser — plus optional KubeJS bindings.',
       },
     ],
+    repo: 'https://github.com/modrollstudio/Critfall',
     links: [
-      { label: 'GitHub', href: 'https://github.com/modrollstudio/Critfall' },
       { label: 'Modrinth', href: 'https://modrinth.com/mod/critfall' },
       { label: 'CurseForge', href: 'https://www.curseforge.com/minecraft/mc-mods/critfall' },
     ],
   }
 ];
+
+export function isReleased(mod) {
+  return mod.status === 'Released';
+}
+
+export function statusLabel(mod) {
+  return mod.version ? `${mod.status} · v${mod.version}` : mod.status;
+}
 
 export function getMod(slug) {
   return mods.find((mod) => mod.slug === slug);
