@@ -24,12 +24,12 @@
 
 .primary {
   background: linear-gradient(180deg, $color-primary, var(--color-primary-dark));
-  color: #241708;
+  color: $color-bg;
   box-shadow: 0 4px 18px rgba(var(--color-primary-rgb), 0.3);
 
   &:hover:not(:disabled) { box-shadow: 0 6px 26px rgba(var(--color-primary-rgb), 0.45); }
 }
-.ghost { background: transparent; color: #e8d8b8; border-color: $color-secondary; }
+.ghost { background: transparent; color: $color-parchment; border-color: $color-secondary; }
 
 .sm { padding: $space-sm $space-md; font-size: 14px; }
 .md { padding: $space-md $space-lg; font-size: 16px; }

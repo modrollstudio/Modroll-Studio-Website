@@ -1,37 +1,38 @@
 @use 'tokens' as *;
 
-// "Tavern Table" theme — re-tint the site here and nowhere else (palette table in README)
+// Modroll pixel-art theme (midnight navy + torch gold) — re-tint the site here and nowhere else
 :root {
-  --color-primary:      #e8a33d;
-  --color-primary-dark: #c47a1f;
-  --color-secondary:    #6e5330;
-  --color-text:         #efe3cd;
-  --color-muted:        #a98f68;
-  --color-bg:           #191009;
-  --color-surface:      #251a0e;
-  --color-border:       #3d2b16;
+  --color-primary:      #e8b13a;
+  --color-primary-dark: #a8741c;
+  --color-secondary:    #2e3d7a;
+  --color-text:         #f4ecd6;
+  --color-muted:        #8f98c0;
+  --color-bg:           #10142c;
+  --color-surface:      #161d40;
+  --color-border:       #2b3b85;
 
-  --color-ember:     #c24b2e;
-  --color-crimson:   #7a1f2b;
-  --color-parchment: #f3e6c8;
+  --color-ember:        #e0462f;
+  --color-crimson:      #9a2a1e;
+  --color-parchment:    #f4ecd6;
 
   // R,G,B copies for see-through glows — keep in sync with the hex values above
-  --color-primary-rgb: 232, 163, 61;
-  --color-ember-rgb:   194, 75, 46;
+  --color-primary-rgb:  232, 177, 58;
+  --color-ember-rgb:    224, 70, 47;
+  --color-bg-rgb:       16, 20, 44;
 
   --space-sm: 8px;
   --space-md: 16px;
   --space-lg: 32px;
   --space-xl: 64px;
 
-  --radius:    6px;
+  --radius:    0;
   --font-base: 'Alegreya Sans', Georgia, system-ui, sans-serif;
-  --font-display: 'Cinzel', Georgia, 'Times New Roman', serif;
+  --font-display: 'Pixelify Sans', monospace;
   --shadow:    0 2px 10px rgba(0, 0, 0, 0.45);
 
-  --header-from: #241708;
-  --header-to:   #191009;
-  --header-fg:   #f3e6c8;
+  --header-from: #161d40;
+  --header-to:   #10142c;
+  --header-fg:   #f4ecd6;
 }
 
 * { box-sizing: border-box; }
@@ -65,7 +66,7 @@ h1 em, h2 em {
 
 // element+class outranks the Card module's single class so the surface tint wins
 a.surface, div.surface, button.surface {
-  background: linear-gradient(180deg, $color-surface, #1e1409);
+  background: linear-gradient(180deg, $color-surface, $color-bg);
 }
 
 .skip-link {
