@@ -34,7 +34,7 @@ export default function ModPage() {
 
   useEffect(() => {
     if (!mod) return;
-    document.title = `${mod.name} — Modroll Studio`;
+    document.title = `${mod.fullName ?? mod.name} — Modroll Studio`;
     document.querySelector('link[rel="canonical"]').href = `https://modroll.studio/mods/${mod.slug}`;
   }, [mod]);
 
@@ -55,6 +55,7 @@ export default function ModPage() {
         variant="hero"
         className="hero-anim"
         art={<img className={styles.heroArt} src={mod.icon} alt="" width={128} height={128} />}
+        eyebrow={required && `A ${required.name} add-on`}
         title={mod.name}
         subtitle={mod.tagline}
         style={heroStyle}

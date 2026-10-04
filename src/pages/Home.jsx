@@ -66,6 +66,7 @@ export default function Home() {
               <Card
                 className={`surface ${styles.featured}`}
                 media={<img className={styles.modIcon} src={mod.icon} alt="" width={128} height={128} />}
+                eyebrow={mod.requires && `A ${getMod(mod.requires.slug).name} add-on`}
                 title={mod.name}
                 text={mod.tagline}
                 to={`/mods/${mod.slug}`}

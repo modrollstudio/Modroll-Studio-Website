@@ -6,7 +6,10 @@ import checksIcon from '../assets/checks-icon.png';
 // description[0] doubles as the home card summary.
 // Only status 'Released' shows the install links; any other status (e.g. 'In development')
 // hides them. version, mcVersion, loaders, features, links, repo and requires are all optional.
-// requires names another mod's slug plus the minimum version, shown on the mod page and home card.
+// requires names another mod's slug plus the minimum version, shown on the mod page and home card;
+// a mod with requires is labelled an add-on of that mod.
+// name is the short name used across the site; fullName (optional) is the store name used in the
+// page <title> for search.
 const mods = [
   {
     slug: 'critfall',
@@ -55,7 +58,8 @@ const mods = [
   },
   {
     slug: 'initiative',
-    name: 'Critfall: Initiative',
+    name: 'Initiative',
+    fullName: 'Critfall: Initiative',
     icon: initiativeIcon,
     tagline: 'Turn-based, initiative-driven combat for Minecraft.',
     status: 'Released',
@@ -102,7 +106,8 @@ const mods = [
   },
   {
     slug: 'checks',
-    name: 'Critfall: Checks',
+    name: 'Checks',
+    fullName: 'Critfall: Checks',
     icon: checksIcon,
     tagline: 'Ability scores, skills and saves for Minecraft.',
     status: 'In development',
