@@ -1,9 +1,11 @@
 import critfallIcon from '../assets/critfall-icon.png';
+import initiativeIcon from '../assets/initiative-icon.png';
 
 // A mod also needs an icon in src/assets and a URL entry in public/sitemap.xml;
 // description[0] doubles as the home card summary.
 // Only status 'Released' shows the install links; any other status (e.g. 'In development')
-// hides them. version, mcVersion, loaders, features, links and repo are all optional.
+// hides them. version, mcVersion, loaders, features, links, repo and requires are all optional.
+// requires names another mod's slug plus the minimum version, shown on the mod page and home card.
 const mods = [
   {
     slug: 'critfall',
@@ -49,7 +51,54 @@ const mods = [
       { label: 'Modrinth', href: 'https://modrinth.com/mod/critfall' },
       { label: 'CurseForge', href: 'https://www.curseforge.com/minecraft/mc-mods/critfall' },
     ],
-  }
+  },
+  {
+    slug: 'initiative',
+    name: 'Critfall: Initiative',
+    icon: initiativeIcon,
+    tagline: 'Turn-based, initiative-driven combat for Minecraft.',
+    status: 'Released',
+    version: '0.1.1',
+    mcVersion: '1.21.1',
+    loaders: ['NeoForge', 'Fabric'],
+    requires: { slug: 'critfall', version: '0.2.6' },
+    description: [
+      'Initiative turns Minecraft fights into tabletop encounters. The world runs in real time until combat starts, then everyone in the fight rolls initiative and takes structured turns in that order — move, attack, hide, shove or grapple — while the rest of the world carries on.',
+      "It is built on Critfall's d20 engine: every attack roll, save, crit and fumble is still resolved by Critfall, and Initiative decides when and in what order those rolls happen. Critfall itself still works on its own without Initiative.",
+    ],
+    features: [
+      {
+        title: 'Combat starts with initiative',
+        text: 'When a hostile mob — or a neutral one you provoked — engages, every player nearby joins the fight and rolls initiative to set the turn order.',
+      },
+      {
+        title: 'Click-to-target action UI',
+        text: 'Your turn shows a bar of the actions you can take. Pick one, click the target, and the roll plays out.',
+      },
+      {
+        title: 'Hide, Shove and Grapple',
+        text: 'More than just attacking: hide from mobs for advantage, shove enemies back, or grapple them in place until they escape.',
+      },
+      {
+        title: 'Roll animation',
+        text: 'Initiative, attack and contested rolls animate on screen with the roller’s name under the dice, so every hit and miss reads at a glance.',
+      },
+      {
+        title: 'Multiplayer with shared rolls',
+        text: 'Everyone in an encounter takes their own turn in one order and watches every roll it produces — the shared tabletop moment.',
+      },
+      {
+        title: 'Configurable and extensible',
+        text: 'Every mechanic can be tuned or switched off in config/initiative.json, and other mods can register new actions through the action API.',
+      },
+    ],
+    repo: 'https://github.com/modrollstudio/Initiative',
+    links: [
+      // TODO: Modrinth URL unconfirmed (no project found at modrinth.com/mod/critfall-initiative)
+      { label: 'Modrinth', href: 'https://modrinth.com/mod/critfall-initiative', todo: true },
+      { label: 'CurseForge', href: 'https://www.curseforge.com/minecraft/mc-mods/critfall-initiative' },
+    ],
+  },
 ];
 
 export function isReleased(mod) {

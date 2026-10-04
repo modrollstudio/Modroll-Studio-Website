@@ -76,6 +76,7 @@ export default function Home() {
                     <Badge key={loader}>{loader}</Badge>
                   ))}
                   {mod.mcVersion && <Badge>MC {mod.mcVersion}</Badge>}
+                  {mod.requires && <Badge>Requires {getMod(mod.requires.slug).name}</Badge>}
                 </div>
               </Card>
             </FadeInOnScroll>
