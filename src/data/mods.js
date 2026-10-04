@@ -1,5 +1,6 @@
 import critfallIcon from '../assets/critfall-icon.png';
 import initiativeIcon from '../assets/initiative-icon.png';
+import checksIcon from '../assets/checks-icon.png';
 
 // A mod also needs an icon in src/assets and a URL entry in public/sitemap.xml;
 // description[0] doubles as the home card summary.
@@ -97,6 +98,46 @@ const mods = [
       // TODO: Modrinth URL unconfirmed (no project found at modrinth.com/mod/critfall-initiative)
       { label: 'Modrinth', href: 'https://modrinth.com/mod/critfall-initiative', todo: true },
       { label: 'CurseForge', href: 'https://www.curseforge.com/minecraft/mc-mods/critfall-initiative' },
+    ],
+  },
+  {
+    slug: 'checks',
+    name: 'Critfall: Checks',
+    icon: checksIcon,
+    tagline: 'Ability scores, skills and saves for Minecraft.',
+    status: 'In development',
+    mcVersion: '1.21.1',
+    loaders: ['NeoForge', 'Fabric'],
+    requires: { slug: 'critfall', version: '0.2.8' },
+    description: [
+      'Checks adds the character sheet that Critfall leaves out: six ability scores, skills, saving throws and a proficiency bonus for every player and mob, with every die rolled through Critfall.',
+      'New players build a character on first join — species, background and class, then their ability scores — and level from 1 to 20 as they play. Critfall and Initiative both work without it.',
+    ],
+    features: [
+      {
+        title: 'Ability scores, skills and saves',
+        text: 'STR, DEX, CON, INT, WIS and CHA for every entity, the 18 standard skills, saving throws and passive scores. Mobs get sensible scores from their attributes.',
+      },
+      {
+        title: 'Character creation',
+        text: 'A first-join screen to set your scores with the standard array, point buy, or dice rolled through Critfall.',
+      },
+      {
+        title: 'Species, backgrounds and classes',
+        text: 'Presets for species, backgrounds and classes, each with its own ability bonuses, skills or saving throws.',
+      },
+      {
+        title: 'Levels 1–20',
+        text: 'A character level separate from the vanilla XP bar, earned from XP and advancements, from level 1 up to 20.',
+      },
+      {
+        title: 'Stat screen',
+        text: 'A character sheet on a key (K by default) showing abilities, saves, passives and skills, with a breakdown of every bonus on hover.',
+      },
+      {
+        title: 'Datapack API',
+        text: 'Presets, skills and mob scores are all defined in datapacks, and other mods can read scores and roll checks through the public API.',
+      },
     ],
   },
 ];
