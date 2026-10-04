@@ -7,6 +7,7 @@ import Button from './components/Button/Button.jsx';
 import Home from './pages/Home.jsx';
 import ModPage from './pages/ModPage.jsx';
 import NotFound from './pages/NotFound.jsx';
+import mods from './data/mods.js';
 
 // a hash (e.g. /#mods from the nav) scrolls to that section; otherwise a new page starts at the top
 function ScrollToTop() {
@@ -25,10 +26,11 @@ function ScrollToTop() {
   return null;
 }
 
-// one Mods link instead of one per mod, so the nav stays a single row on phones
+// wide screens get one link per mod; below the Navbar breakpoint a single Mods link replaces them
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/#mods', label: 'Mods', activePrefix: '/mods/' },
+  ...mods.map((mod) => ({ href: `/mods/${mod.slug}`, label: mod.name, show: 'wide' })),
+  { href: '/#mods', label: 'Mods', activePrefix: '/mods/', show: 'narrow' },
 ];
 
 const footerLinks = [

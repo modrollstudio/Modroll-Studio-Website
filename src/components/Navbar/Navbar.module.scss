@@ -68,6 +68,15 @@
 }
 .actions { margin-left: auto; }
 
+// per-mod links need ~710px on one row (measured with Home + 3 mods); below it they give way to the single Mods link.
+// Re-measure when a mod is added or renamed (the nav must not wrap or scroll sideways).
+$nav-collapse: 760px;
+.narrow { display: none; }
+@media (max-width: $nav-collapse) {
+  .wide   { display: none; }
+  .narrow { display: list-item; }
+}
+
 // phones: tighter spacing (and the smaller logo in Logo.module.scss) keeps one row down to 320px;
 // wrap is only a fallback so nothing can overflow
 @media (max-width: 480px) {
