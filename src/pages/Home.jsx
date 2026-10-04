@@ -5,23 +5,27 @@ import Card from '../components/Card/Card.jsx';
 import Grid from '../components/Grid/Grid.jsx';
 import Badge from '../components/Badge/Badge.jsx';
 import Section from '../components/Section/Section.jsx';
-import CardArt from '../components/CardArt/CardArt.jsx';
 import TypingText from '../components/TypingText/TypingText.jsx';
 import FadeInOnScroll from '../components/FadeInOnScroll/FadeInOnScroll.jsx';
 import FloatingEmbers from '../components/FloatingEmbers/FloatingEmbers.jsx';
 import Roadmap from '../components/Roadmap/Roadmap.jsx';
 import mods, { getMod, statusLabel } from '../data/mods.js';
 import roadmap from '../data/roadmap.js';
-import heroBg from '../assets/hero.webp';
 import styles from './Home.module.scss';
 
-const heroStyle = {
-  position: 'relative',
-  overflow: 'hidden',
-  padding: '96px clamp(24px, 8vw, 120px) 104px',
-  backgroundImage: `linear-gradient(90deg, rgba(var(--color-bg-rgb), 0.82), rgba(var(--color-bg-rgb), 0.45) 52%, rgba(var(--color-bg-rgb), 0) 78%), url(${heroBg})`,
-  backgroundPosition: 'left center',
-};
+const gold = 'var(--color-primary)';
+
+function Sigil({ symbol }) {
+  return (
+    <svg width={64} height={64} viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+      <circle cx="32" cy="32" r="26" fill="none" stroke={gold} strokeWidth="1.5" opacity="0.55" />
+      <circle cx="32" cy="32" r="21" fill="none" stroke={gold} strokeWidth="1" opacity="0.35" strokeDasharray="4 6" />
+      <text x="32" y="40" textAnchor="middle" fontSize="22" fill={gold} fontFamily="Georgia, serif">
+        {symbol}
+      </text>
+    </svg>
+  );
+}
 
 export default function Home() {
   useEffect(() => {
@@ -32,15 +36,13 @@ export default function Home() {
   return (
     <>
       <Header
-        variant="hero"
-        className={`hero-anim ${styles.hero}`}
+        className={styles.hero}
         title={
           <>
             We craft <TypingText words={['dice mods', 'critical hits', 'natural 20s']} />.
           </>
         }
         subtitle="Modroll Studio is a small independent studio bringing tabletop rules to Minecraft: Critfall for d20 combat, Initiative for turn-based encounters, and Checks — in development — for ability scores and skills."
-        style={heroStyle}
       >
         <FloatingEmbers />
         <div className={styles.heroActions}>
@@ -64,7 +66,7 @@ export default function Home() {
           {mods.map((mod, i) => (
             <FadeInOnScroll key={mod.slug} delay={i * 90} className={styles.featuredCell}>
               <Card
-                className={`surface ${styles.featured}`}
+                className={styles.featured}
                 media={<img className={styles.modIcon} src={mod.icon} alt="" width={128} height={128} />}
                 eyebrow={mod.requires && `A ${getMod(mod.requires.slug).name} add-on`}
                 title={mod.name}
@@ -94,27 +96,25 @@ export default function Home() {
       </Section>
 
       <Section width="xl" title="What we're about">
-        <Grid cols={3} gap="md">
+        <Grid cols={3}>
           <FadeInOnScroll>
             <Card
-              className="surface"
-              media={<CardArt icon={getMod('critfall').icon} size={128} />}
+              // icons are 256px (16×16 art at 14×) — only 128 or 256 keep every art pixel a whole number of screen pixels
+              media={<img className={styles.pixelIcon} src={getMod('critfall').icon} alt="" width={128} height={128} />}
               title="Dice first"
               text="Real tabletop mechanics — attack rolls, dice damage, crits and fumbles — not just cosmetic randomness."
             />
           </FadeInOnScroll>
           <FadeInOnScroll delay={90}>
             <Card
-              className="surface"
-              media={<CardArt kind="sigil" symbol="✎" size={64} />}
+              media={<Sigil symbol="✎" />}
               title="Data-driven"
               text="Every value lives in datapacks, so modpack developers can tune any mob, weapon, or mechanic without touching code."
             />
           </FadeInOnScroll>
           <FadeInOnScroll delay={180}>
             <Card
-              className="surface"
-              media={<CardArt kind="sigil" symbol="◐" size={64} />}
+              media={<Sigil symbol="◐" />}
               title="Toggle everything"
               text="Each mechanic switches off individually. Use the whole system, or just the parts your pack wants."
             />

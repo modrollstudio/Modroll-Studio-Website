@@ -1,21 +1,19 @@
-@use '../../styles/tokens' as *;
-
 .footer {
-  padding: $space-lg $space-md;
-  border-top: 1px solid $color-border;
+  padding: var(--space-lg) var(--space-md);
+  border-top: 1px solid var(--color-border);
   text-align: center;
 }
 .links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: $space-md;
-  margin: 0 0 $space-md;
+  gap: var(--space-md);
+  margin: 0 0 var(--space-md);
   padding: 0;
   list-style: none;
 }
 .links a {
   transition: color 0.2s ease;
-  &:hover, &:focus-visible { color: $color-primary; }
+  &:hover, &:focus-visible { color: var(--color-primary); }
 }
-.text { margin: 0; font-size: 14px; color: $color-muted; }
+.text { margin: 0; font-size: var(--text-sm); color: var(--color-muted); }

@@ -1,27 +1,17 @@
 import { Link } from 'react-router';
 import styles from './Card.module.scss';
 
-export default function Card({
-  media,
-  eyebrow,
-  title,
-  text,
-  to,
-  variant = 'default',
-  className = '',
-  children,
-}) {
-  const base = variant === 'default' ? styles.card : `${styles.card} ${styles[variant]}`;
-  const classes = className ? `${base} ${className}` : base;
+export default function Card({ media, eyebrow, title, text, to, variant, className, children }) {
+  const classes = [styles.card, styles[variant], className].filter(Boolean).join(' ');
 
   const inner = (
     <>
       {media && <div className={styles.media} aria-hidden="true">{media}</div>}
       <div className={styles.body}>
         {eyebrow && <p className={styles.eyebrow}>{eyebrow}</p>}
-        {title && <h3 className={styles.title}>{title}</h3>}
-        {text && <p className={styles.text}>{text}</p>}
-        {children ? <div className={styles.footer}>{children}</div> : null}
+        <h3 className={styles.title}>{title}</h3>
+        <p className={styles.text}>{text}</p>
+        {children && <div className={styles.footer}>{children}</div>}
       </div>
     </>
   );

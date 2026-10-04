@@ -1,5 +1,3 @@
-@use '../../styles/tokens' as *;
-
 .roadmap {
   list-style: none;
   margin: 0;
@@ -9,7 +7,7 @@
 
 .item {
   position: relative;
-  padding: 0 0 $space-lg 40px;
+  padding: 0 0 var(--space-lg) 40px;
 }
 .item:last-child {
   padding-bottom: 0;
@@ -23,7 +21,7 @@
   top: 26px;
   bottom: 2px;
   width: 2px;
-  background: $color-border;
+  background: var(--color-border);
 }
 
 .dot {
@@ -36,40 +34,40 @@
 }
 
 .released {
-  border: 2px solid $color-primary;
-  background: $color-primary;
+  border: 2px solid var(--color-primary);
+  background: var(--color-primary);
 }
 
 .ongoing {
-  border: 2px solid $color-ember;
-  background: $color-ember;
+  border: 2px solid var(--color-ember);
+  background: var(--color-ember);
   animation: roadmap-pulse 2.4s ease-in-out infinite;
 }
 
 .next {
-  border: 2px solid $color-ember;
-  background: $color-bg;
+  border: 2px solid var(--color-ember);
+  background: var(--color-bg);
 }
 
 .planned {
-  border: 2px solid $color-muted;
-  background: $color-bg;
+  border: 2px solid var(--color-muted);
+  background: var(--color-bg);
 }
 
 .paused {
-  border: 2px dashed $color-muted;
-  background: $color-bg;
+  border: 2px dashed var(--color-muted);
+  background: var(--color-bg);
   opacity: 0.6;
 }
 
 .abandoned {
-  border: 2px solid $color-muted;
-  background: $color-bg;
+  border: 2px solid var(--color-muted);
+  background: var(--color-bg);
   opacity: 0.2;
 }
 @keyframes roadmap-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(var(--color-ember-rgb), 0.5); }
-  50% { box-shadow: 0 0 0 7px rgba(var(--color-ember-rgb), 0); }
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-ember) 50%, transparent); }
+  50% { box-shadow: 0 0 0 7px transparent; }
 }
 @media (prefers-reduced-motion: reduce) {
   .ongoing { animation: none; }
@@ -79,15 +77,15 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: $space-md;
+  gap: var(--space-md);
 }
 .heading h3 {
   margin: 0;
-  font-size: 22px;
+  font-size: var(--text-xl);
 }
 
 .note {
-  margin: $space-sm 0 0;
-  color: $color-muted;
+  margin: var(--space-sm) 0 0;
+  color: var(--color-muted);
   max-width: 60ch;
 }
