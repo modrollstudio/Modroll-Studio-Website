@@ -29,3 +29,12 @@ a:focus-visible .glyph {
   color: $color-muted;
   font-weight: 400;
 }
+@media (max-width: 480px) {
+  .logo     { gap: 6px; }
+  .glyph    { width: 32px; height: 32px; }
+  .wordmark { font-size: 15px; }
+}
+@media (max-width: 360px) {
+  .glyph    { width: 28px; height: 28px; }
+  .wordmark { font-size: 14px; }
+}

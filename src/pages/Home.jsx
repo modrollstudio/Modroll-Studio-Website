@@ -55,6 +55,7 @@ export default function Home() {
       </Header>
 
       <Section
+        id="mods"
         width="xl"
         title="Our mods"
         lead="Dice-driven mods that bring real tabletop mechanics into Minecraft."

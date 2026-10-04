@@ -7,22 +7,28 @@ import Button from './components/Button/Button.jsx';
 import Home from './pages/Home.jsx';
 import ModPage from './pages/ModPage.jsx';
 import NotFound from './pages/NotFound.jsx';
-import mods from './data/mods.js';
 
+// a hash (e.g. /#mods from the nav) scrolls to that section; otherwise a new page starts at the top
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash, key } = useLocation();
   useEffect(() => {
+    const target = hash && document.getElementById(hash.slice(1));
+    if (target) {
+      target.scrollIntoView();
+      return;
+    }
     document.documentElement.scrollTo({
       top: 0,
       left: 0,
     });
-  }, [pathname]);
+  }, [pathname, hash, key]);
   return null;
 }
 
+// one Mods link instead of one per mod, so the nav stays a single row on phones
 const navLinks = [
   { href: '/', label: 'Home' },
-  ...mods.map((mod) => ({ href: `/mods/${mod.slug}`, label: mod.name })),
+  { href: '/#mods', label: 'Mods', activePrefix: '/mods/' },
 ];
 
 const footerLinks = [

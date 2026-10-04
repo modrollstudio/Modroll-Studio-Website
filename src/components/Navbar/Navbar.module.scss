@@ -26,15 +26,13 @@
     pointer-events: none;
   }
 }
-// phones: tighter spacing keeps one row at 390px; narrower screens wrap the action button
-@media (max-width: 480px) {
-  .navbar { flex-wrap: wrap; gap: $space-md; padding: $space-sm; }
-}
 @keyframes nav-drop {
   from { transform: translateY(-100%); }
   to   { transform: none; }
 }
-.logo    { font-weight: 700; font-size: 20px; }
+.logo    { display: flex; font-weight: 700; font-size: 20px; }
+// a flex link drops the inline line box, so the logo is as tall as its glyph and centers with the links
+.logo a  { display: flex; align-items: center; }
 .links   { display: flex; gap: $space-md; margin: 0; padding: 0; list-style: none; }
 
 .links a {
@@ -69,3 +67,15 @@
   .links a::after { transition: none; }
 }
 .actions { margin-left: auto; }
+
+// phones: tighter spacing (and the smaller logo in Logo.module.scss) keeps one row down to 320px;
+// wrap is only a fallback so nothing can overflow
+@media (max-width: 480px) {
+  .navbar      { flex-wrap: wrap; gap: 12px; padding: $space-sm; }
+  .links       { gap: 12px; }
+  .actions > a { padding: 6px 10px; }
+}
+@media (max-width: 360px) {
+  .navbar { gap: 8px; }
+  .links  { gap: 10px; font-size: 15px; }
+}
