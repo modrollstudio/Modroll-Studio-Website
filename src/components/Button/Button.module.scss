@@ -1,14 +1,11 @@
-@use '../../styles/tokens' as *;
-
 .button {
-  font-family: $font-base;
+  font-family: var(--font-base);
   font-weight: 700;
   border: 1px solid transparent;
-  border-radius: $radius;
+  border-radius: var(--radius);
   cursor: pointer;
   display: inline-block;
   text-align: center;
-  text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 
   &:hover:not(:disabled) {
@@ -23,14 +20,14 @@
 }
 
 .primary {
-  background: linear-gradient(180deg, $color-primary, var(--color-primary-dark));
-  color: $color-bg;
-  box-shadow: 0 4px 18px rgba(var(--color-primary-rgb), 0.3);
+  background: linear-gradient(180deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-bg);
+  box-shadow: 0 4px 18px color-mix(in srgb, var(--color-primary) 30%, transparent);
 
-  &:hover:not(:disabled) { box-shadow: 0 6px 26px rgba(var(--color-primary-rgb), 0.45); }
+  &:hover:not(:disabled) { box-shadow: 0 6px 26px color-mix(in srgb, var(--color-primary) 45%, transparent); }
 }
-.ghost { background: transparent; color: $color-parchment; border-color: $color-secondary; }
+.ghost { background: transparent; color: var(--color-text); border-color: var(--color-secondary); }
 
-.sm { padding: $space-sm $space-md; font-size: 14px; }
-.md { padding: $space-md $space-lg; font-size: 16px; }
-.lg { padding: $space-md $space-xl; font-size: 18px; }
+.sm { padding: var(--space-sm) var(--space-md); font-size: var(--text-sm); }
+.md { padding: var(--space-md) var(--space-lg); font-size: var(--text-md); }
+.lg { padding: var(--space-md) var(--space-xl); font-size: var(--text-lg); }

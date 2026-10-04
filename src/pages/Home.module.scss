@@ -1,5 +1,3 @@
-@use '../styles/tokens' as *;
-
 // hero art's safe text zone is the dark left ~60%; the mark bleeds off the right
 .hero {
   display: flex;
@@ -8,6 +6,16 @@
   align-items: flex-start;
   text-align: left;
   min-height: clamp(360px, 34vw, 560px);
+  padding: var(--space-2xl) 8vw;
+  background-image:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-bg) 82%, transparent),
+      color-mix(in srgb, var(--color-bg) 45%, transparent) 52%,
+      transparent 78%
+    ),
+    url('../assets/hero.webp');
+  background-position: left center;
 
   h1, p {
     max-width: 620px;
@@ -16,27 +24,23 @@
 .heroActions {
   display: flex;
   flex-wrap: wrap;
-  gap: $space-md;
-  animation: hero-rise 0.7s ease both 0.45s;
-}
-@media (prefers-reduced-motion: reduce) {
-  .heroActions { animation: none; }
+  gap: var(--space-md);
 }
 .modIcon {
-  display: block;
   image-rendering: pixelated;
   filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.45));
 }
+.pixelIcon { image-rendering: pixelated; }
 .cardMeta {
   display: flex;
   flex-wrap: wrap;
-  gap: $space-sm;
+  gap: var(--space-sm);
 }
 
 .modsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: $space-lg;
+  gap: var(--space-lg);
 }
 .featuredCell { grid-column: 1 / -1; }
 @media (max-width: 720px) {
@@ -53,21 +57,17 @@
   height: 100%;
   min-height: 250px;
   border-bottom: none;
-  border-right: 1px solid $color-border;
+  border-right: 1px solid var(--color-border);
 }
 .featured > div:last-child {
-  padding: $space-lg;
+  padding: var(--space-lg);
 }
 .featured h3 {
-  font-size: 28px;
-  margin-bottom: $space-sm;
-}
-.featured p {
-  font-size: 16px;
+  font-size: var(--text-2xl);
 }
 .featuredSummary {
-  margin: 0 0 $space-md;
-  color: $color-text;
+  margin: 0 0 var(--space-md);
+  color: var(--color-text);
   max-width: 65ch;
 }
 @media (max-width: 720px) {
@@ -75,6 +75,6 @@
   .featured > div:first-child {
     min-height: 180px;
     border-right: none;
-    border-bottom: 1px solid $color-border;
+    border-bottom: 1px solid var(--color-border);
   }
 }

@@ -1,5 +1,3 @@
-@use '../../styles/tokens' as *;
-
 .embers {
   position: absolute;
   inset: 0;
@@ -8,16 +6,19 @@
 }
 .ember {
   position: absolute;
+  left: var(--left);
   bottom: -8px;
+  width: var(--size);
+  height: var(--size);
   border-radius: 50%;
-  background: $color-primary;
-  box-shadow: 0 0 6px 2px rgba(var(--color-primary-rgb), 0.45);
+  background: var(--color-primary);
+  box-shadow: 0 0 6px 2px color-mix(in srgb, var(--color-primary) 45%, transparent);
   opacity: 0;
-  animation: rise linear infinite;
+  animation: rise var(--duration) linear var(--delay) infinite;
 }
 .ember:nth-child(even) {
-  background: $color-ember;
-  box-shadow: 0 0 6px 2px rgba(var(--color-ember-rgb), 0.45);
+  background: var(--color-ember);
+  box-shadow: 0 0 6px 2px color-mix(in srgb, var(--color-ember) 45%, transparent);
 }
 @keyframes rise {
   0%   { transform: translate(0, 0); opacity: 0; }

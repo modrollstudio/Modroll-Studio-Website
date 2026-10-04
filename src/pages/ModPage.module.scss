@@ -1,54 +1,51 @@
-@use '../styles/tokens' as *;
-
+.hero {
+  padding: var(--space-xl) var(--space-md);
+  background-image:
+    radial-gradient(640px 300px at 50% -20%, color-mix(in srgb, var(--color-primary) 26%, transparent), transparent 68%),
+    radial-gradient(420px 240px at 88% 110%, color-mix(in srgb, var(--color-ember) 20%, transparent), transparent 70%),
+    linear-gradient(180deg, var(--color-surface), var(--color-bg) 75%);
+}
 .heroArt {
   margin: 0 auto;
   image-rendering: pixelated;
-  animation: hero-rise 0.8s ease both;
 }
 .badges {
   display: flex;
   flex-wrap: wrap;
-  gap: $space-sm;
+  gap: var(--space-sm);
   justify-content: center;
-  margin-top: $space-md;
-  animation: hero-rise 0.7s ease both 0.45s;
-}
-@media (prefers-reduced-motion: reduce) {
-  .heroArt, .badges { animation: none; }
+  margin-top: var(--space-md);
 }
 .paragraph {
-  margin: 0 0 $space-md;
+  margin: 0 0 var(--space-md);
   max-width: 70ch;
 }
 .requires {
-  margin: 0 0 $space-md;
+  margin: 0 0 var(--space-md);
   max-width: 70ch;
-  padding: $space-sm $space-md;
-  border-left: 3px solid $color-primary;
-  background: rgba(var(--color-primary-rgb), 0.08);
+  padding: var(--space-sm) var(--space-md);
+  border-left: 3px solid var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
 
-  a { color: $color-parchment; font-weight: 700; text-decoration: underline; }
+  a { color: var(--color-text); font-weight: 700; text-decoration: underline; }
 }
 .links {
   display: flex;
   flex-wrap: wrap;
-  gap: $space-md;
+  gap: var(--space-md);
 }
 .screenshot {
-  display: block;
   width: 100%;
   height: auto;
   border-radius: 8px;
 }
 .note {
-  margin: $space-md 0 0;
-  color: $color-muted;
-  font-size: 14px;
-
-  a { text-decoration: underline; }
+  margin: var(--space-md) 0 0;
+  color: var(--color-muted);
+  font-size: var(--text-sm);
 }
 .contact {
-  margin: $space-lg 0 0;
+  margin: var(--space-lg) 0 0;
 
-  a { color: $color-parchment; text-decoration: underline; }
+  a { color: var(--color-text); text-decoration: underline; }
 }

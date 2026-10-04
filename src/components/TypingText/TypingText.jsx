@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './TypingText.module.scss';
 
-// Types and erases each `words` entry in turn. Used in the Home hero headline.
 const typeMs = 75;
 const eraseMs = 40;
 const holdMs = 1900;
@@ -13,7 +12,7 @@ export default function TypingText({ words }) {
   const [erasing, setErasing] = useState(false);
 
   useEffect(() => {
-    if (reduced) return undefined;
+    if (reduced) return;
     const word = words[index % words.length];
     let timer;
     if (!erasing) {
@@ -33,10 +32,7 @@ export default function TypingText({ words }) {
 
   if (reduced) return <em>{words[0]}</em>;
 
-  let longestWord = words[0];
-  for (const word of words) {
-    if (word.length > longestWord.length) longestWord = word;
-  }
+  const longestWord = words.reduce((a, b) => (b.length > a.length ? b : a));
 
   return (
     <em className={styles.wrap}>

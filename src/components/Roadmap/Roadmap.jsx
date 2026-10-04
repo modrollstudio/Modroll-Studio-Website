@@ -8,7 +8,7 @@ const statusLabels = {
   next: 'Up next',
   planned: 'Planned',
   paused: 'On hold',
-  Abandoned: 'This has been abandoned',
+  abandoned: 'This has been abandoned',
 };
 
 export default function Roadmap({ items }) {
