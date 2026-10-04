@@ -39,13 +39,13 @@ export default function Home() {
             We craft <TypingText words={['dice mods', 'critical hits', 'natural 20s']} />.
           </>
         }
-        subtitle="Modroll Studio is a small independent studio bringing tabletop rules to Minecraft — attack rolls, dice damage, crits and fumbles, all data-driven. Starting with Critfall."
+        subtitle="Modroll Studio is a small independent studio bringing tabletop rules to Minecraft: Critfall for d20 combat, Initiative for turn-based encounters, and Checks — in development — for ability scores and skills."
         style={heroStyle}
       >
         <FloatingEmbers />
         <div className={styles.heroActions}>
-          <Button size="lg" to="/mods/critfall">
-            Explore Critfall
+          <Button size="lg" to="/#mods">
+            Explore our mods
           </Button>
           <Button size="lg" variant="ghost" href="https://github.com/modrollstudio" target="_blank" rel="noopener noreferrer">
             GitHub
@@ -55,6 +55,7 @@ export default function Home() {
       </Header>
 
       <Section
+        id="mods"
         width="xl"
         title="Our mods"
         lead="Dice-driven mods that bring real tabletop mechanics into Minecraft."
@@ -65,6 +66,7 @@ export default function Home() {
               <Card
                 className={`surface ${styles.featured}`}
                 media={<img className={styles.modIcon} src={mod.icon} alt="" width={128} height={128} />}
+                eyebrow={mod.requires && `A ${getMod(mod.requires.slug).name} add-on`}
                 title={mod.name}
                 text={mod.tagline}
                 to={`/mods/${mod.slug}`}
@@ -76,6 +78,7 @@ export default function Home() {
                     <Badge key={loader}>{loader}</Badge>
                   ))}
                   {mod.mcVersion && <Badge>MC {mod.mcVersion}</Badge>}
+                  {mod.requires && <Badge>Requires {getMod(mod.requires.slug).name}</Badge>}
                 </div>
               </Card>
             </FadeInOnScroll>

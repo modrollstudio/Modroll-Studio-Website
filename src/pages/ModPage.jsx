@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useParams } from 'react-router';
+import { Link, useParams } from 'react-router';
 import Header from '../components/Header/Header.jsx';
 import Button from '../components/Button/Button.jsx';
 import Card from '../components/Card/Card.jsx';
@@ -34,7 +34,7 @@ export default function ModPage() {
 
   useEffect(() => {
     if (!mod) return;
-    document.title = `${mod.name} — Modroll Studio`;
+    document.title = `${mod.fullName ?? mod.name} — Modroll Studio`;
     document.querySelector('link[rel="canonical"]').href = `https://modroll.studio/mods/${mod.slug}`;
   }, [mod]);
 
@@ -44,6 +44,7 @@ export default function ModPage() {
   const liveLinks = links.filter((link) => !link.todo);
   const pendingLinks = links.filter((link) => link.todo);
   const released = isReleased(mod);
+  const required = mod.requires && getMod(mod.requires.slug);
   const screenshots = Object.entries(allScreenshots).filter(([path]) =>
     path.includes(`/screenshots/${mod.slug}/`),
   );
@@ -54,6 +55,7 @@ export default function ModPage() {
         variant="hero"
         className="hero-anim"
         art={<img className={styles.heroArt} src={mod.icon} alt="" width={128} height={128} />}
+        eyebrow={required && `A ${required.name} add-on`}
         title={mod.name}
         subtitle={mod.tagline}
         style={heroStyle}
@@ -65,6 +67,7 @@ export default function ModPage() {
             <Badge key={loader}>{loader}</Badge>
           ))}
           {mod.mcVersion && <Badge>Minecraft {mod.mcVersion}</Badge>}
+          {required && <Badge tone="accent">Requires {required.name}</Badge>}
         </div>
       </Header>
 
@@ -74,6 +77,12 @@ export default function ModPage() {
             {paragraph}
           </p>
         ))}
+        {required && (
+          <p className={styles.requires}>
+            Requires <Link to={`/mods/${required.slug}`}>{required.name}</Link> {mod.requires.version} or
+            newer — install both on the server and every client.
+          </p>
+        )}
       </Section>
 
       {mod.features?.length > 0 && (
@@ -129,14 +138,13 @@ export default function ModPage() {
       <Section title="Contribute & contact">
         <p className={styles.paragraph}>
           {!released && `${mod.name} is still in development. `}
-          {mod.repo
-            ? 'Bug reports, feature ideas and pull requests are welcome on GitHub — or just drop us a line.'
-            : 'Feature requests and ideas are welcome — drop us a line.'}
+          Missing something you want in {mod.name}? Feature requests are welcome —
+          {mod.repo ? ' open an issue on GitHub or email us.' : ' email us.'}
         </p>
         <div className={styles.links}>
           {mod.repo && (
-            <Button href={mod.repo} target="_blank" rel="noopener noreferrer">
-              GitHub
+            <Button href={`${mod.repo}/issues/new`} target="_blank" rel="noopener noreferrer">
+              Request a feature
               <span className="sr-only">Opens in new tab</span>
             </Button>
           )}
@@ -144,6 +152,20 @@ export default function ModPage() {
             hello@modroll.studio
           </Button>
         </div>
+        {/* without a public repo (e.g. Checks today) the only contact route is email */}
+        <p className={styles.contact}>
+          Have any questions? Email us at <a href="mailto:hello@modroll.studio">hello@modroll.studio</a>
+          {mod.repo ? (
+            <>
+              {' '}or{' '}
+              <a href={`${mod.repo}/issues`} target="_blank" rel="noopener noreferrer">
+                open an issue on GitHub
+                <span className="sr-only">Opens in new tab</span>
+              </a>
+            </>
+          ) : null}
+          .
+        </p>
       </Section>
     </>
   );

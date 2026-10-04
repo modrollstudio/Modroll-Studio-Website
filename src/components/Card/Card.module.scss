@@ -33,6 +33,14 @@ a.card:hover .media svg { transform: scale(1.12); }
   border-bottom: 1px solid $color-border;
 }
 .body  { padding: $space-md; }
+.body .eyebrow { // beats page-level "card p" overrides such as Home's .featured p
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $color-primary;
+}
 .title { margin: 0 0 $space-sm; font-size: 18px; }
 .text  { margin: 0; color: $color-muted; }
 .footer { margin-top: $space-md; }

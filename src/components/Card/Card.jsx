@@ -3,6 +3,7 @@ import styles from './Card.module.scss';
 
 export default function Card({
   media,
+  eyebrow,
   title,
   text,
   to,
@@ -17,6 +18,7 @@ export default function Card({
     <>
       {media && <div className={styles.media} aria-hidden="true">{media}</div>}
       <div className={styles.body}>
+        {eyebrow && <p className={styles.eyebrow}>{eyebrow}</p>}
         {title && <h3 className={styles.title}>{title}</h3>}
         {text && <p className={styles.text}>{text}</p>}
         {children ? <div className={styles.footer}>{children}</div> : null}

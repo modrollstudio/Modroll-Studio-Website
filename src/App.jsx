@@ -9,20 +9,28 @@ import ModPage from './pages/ModPage.jsx';
 import NotFound from './pages/NotFound.jsx';
 import mods from './data/mods.js';
 
+// a hash (e.g. /#mods from the nav) scrolls to that section; otherwise a new page starts at the top
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash, key } = useLocation();
   useEffect(() => {
+    const target = hash && document.getElementById(hash.slice(1));
+    if (target) {
+      target.scrollIntoView();
+      return;
+    }
     document.documentElement.scrollTo({
       top: 0,
       left: 0,
     });
-  }, [pathname]);
+  }, [pathname, hash, key]);
   return null;
 }
 
+// wide screens get one link per mod; below the Navbar breakpoint a single Mods link replaces them
 const navLinks = [
   { href: '/', label: 'Home' },
-  ...mods.map((mod) => ({ href: `/mods/${mod.slug}`, label: mod.name })),
+  ...mods.map((mod) => ({ href: `/mods/${mod.slug}`, label: mod.name, show: 'wide' })),
+  { href: '/#mods', label: 'Mods', activePrefix: '/mods/', show: 'narrow' },
 ];
 
 const footerLinks = [
