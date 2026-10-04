@@ -2,6 +2,7 @@
 
 .heroArt {
   margin: 0 auto;
+  image-rendering: pixelated;
   animation: hero-rise 0.8s ease both;
 }
 .badges {

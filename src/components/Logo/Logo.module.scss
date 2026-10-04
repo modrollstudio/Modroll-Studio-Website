@@ -7,11 +7,12 @@
 }
 .glyph {
   flex: none;
+  image-rendering: pixelated;
   transition: transform 0.3s ease;
 }
 .logo:hover .glyph,
 a:focus-visible .glyph {
-  transform: rotate(24deg);
+  transform: translateY(-2px);
 }
 @media (prefers-reduced-motion: reduce) {
   .glyph { transition: none; }
@@ -26,5 +27,5 @@ a:focus-visible .glyph {
 }
 .sub {
   color: $color-muted;
-  font-weight: 600;
+  font-weight: 400;
 }

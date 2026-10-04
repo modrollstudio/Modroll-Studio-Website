@@ -3,16 +3,16 @@
 .badge {
   display: inline-block;
   padding: 2px 10px;
-  border: 1px solid #4a3418;
-  border-radius: 999px;
-  background: #33230f;
-  color: #d9b982;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+  background: $color-surface;
+  color: $color-primary;
   font-size: 13px;
   line-height: 1.6;
   white-space: nowrap;
 }
 .accent {
-  border-color: #93303c;
+  border-color: $color-ember;
   background: $color-crimson;
-  color: #f3d9c8;
+  color: $color-parchment;
 }

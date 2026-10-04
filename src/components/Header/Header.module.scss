@@ -11,7 +11,7 @@
 .subtitle { margin: 0 0 $space-lg; font-size: 18px; color: $color-muted; }
 .hero {
   background-image: linear-gradient(135deg, var(--header-from, $color-primary), var(--header-to, $color-secondary));
-  color: var(--header-fg, #fff);
-  border-radius: 0 0 12px 12px;
+  color: var(--header-fg, $color-parchment);
+  border-radius: 0 0 $radius $radius;
 }
 .art { margin-bottom: $space-lg; }

@@ -1,11 +1,10 @@
 import styles from './CardArt.module.scss';
 
-// Hand-drawn SVG accent art: a pip die (kind="die") or an arcane ring around a
+// Card accent art: a mod's pixel icon (kind="icon") or an arcane ring around a
 // symbol (kind="sigil"). Used on the "What we're about" cards on Home.
 const gold = 'var(--color-primary)';
-const ember = 'var(--color-ember)';
 
-export default function CardArt({ kind = 'die', symbol = '✦', size = 64 }) {
+export default function CardArt({ kind = 'icon', icon, symbol = '✦', size = 64 }) {
   if (kind === 'sigil') {
     return (
       <svg
@@ -25,19 +24,6 @@ export default function CardArt({ kind = 'die', symbol = '✦', size = 64 }) {
     );
   }
 
-  return (
-    <svg
-      className={styles.emblem}
-      width={size}
-      height={size}
-      viewBox="0 0 64 64"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <rect x="12" y="12" width="40" height="40" rx="8" fill="#33230f" stroke={gold} strokeWidth="2.5" transform="rotate(12 32 32)" />
-      <circle cx="24" cy="24" r="4" fill={gold} />
-      <circle cx="32" cy="34" r="4" fill={gold} />
-      <circle cx="40" cy="44" r="4" fill={ember} />
-    </svg>
-  );
+  // icons are 256px (16×16 art at 14×) — only 128 or 256 keep every art pixel a whole number of screen pixels
+  return <img className={`${styles.emblem} ${styles.pixel}`} src={icon} alt="" width={size} height={size} />;
 }

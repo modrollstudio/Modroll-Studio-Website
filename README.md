@@ -39,23 +39,3 @@ npm run preview  # serve the production build locally
 - `src/styles/global.scss` — theme. All colors live as CSS custom properties in
   the `:root` block here — change a color once there and every component picks
   it up (components reference them via the `$` aliases in `_tokens.scss`).
-
-## Theming — "Tavern Table"
-
-Candlelit umber and parchment gold, the campaign-book warmth of tabletop D&D.
-Critfall's ember red stays in the family as the damage accent:
-
-| Role | Hex |
-|------|-----|
-| Background (candlelit umber) | `#191009` |
-| Surface | `#251A0E` |
-| Border | `#3D2B16` |
-| Text | `#EFE3CD` |
-| Parchment (headings) | `#F3E6C8` |
-| Muted | `#A98F68` |
-| Primary (parchment gold) | `#E8A33D` |
-| Ember red | `#C24B2E` |
-| Deep crimson (status badges) | `#7A1F2B` |
-
-Type: **Cinzel** (display, headings) + **Alegreya Sans** (body), both bundled
-locally via `@fontsource` — no runtime font CDN.
