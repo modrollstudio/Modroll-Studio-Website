@@ -151,6 +151,20 @@ export default function ModPage() {
             hello@modroll.studio
           </Button>
         </div>
+        {/* without a public repo (e.g. Checks today) the only contact route is email */}
+        <p className={styles.contact}>
+          Have any questions? Email us at <a href="mailto:hello@modroll.studio">hello@modroll.studio</a>
+          {mod.repo ? (
+            <>
+              {' '}or{' '}
+              <a href={`${mod.repo}/issues`} target="_blank" rel="noopener noreferrer">
+                open an issue on GitHub
+                <span className="sr-only">Opens in new tab</span>
+              </a>
+            </>
+          ) : null}
+          .
+        </p>
       </Section>
     </>
   );
