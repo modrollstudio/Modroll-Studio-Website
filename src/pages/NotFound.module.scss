@@ -1,16 +1,14 @@
-@use '../styles/tokens' as *;
-
 .wrap {
   max-width: 640px;
   margin: 0 auto;
-  padding: 96px $space-md;
+  padding: var(--space-2xl) var(--space-md);
   text-align: center;
 }
 .title {
-  margin: 0 0 $space-sm;
-  font-size: 40px;
+  margin: 0 0 var(--space-sm);
+  font-size: var(--text-3xl);
 }
 .text {
-  margin: 0 0 $space-lg;
-  color: $color-muted;
+  margin: 0 0 var(--space-lg);
+  color: var(--color-muted);
 }

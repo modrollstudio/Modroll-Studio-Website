@@ -12,21 +12,11 @@ import { getMod, isReleased, statusLabel } from '../data/mods.js';
 import NotFound from './NotFound.jsx';
 import styles from './ModPage.module.scss';
 
-// Get all screenshots from src/assets/screenshots/<mod slug name>/.
+// screenshots live in src/assets/screenshots/<mod slug>/
 const allScreenshots = import.meta.glob('../assets/screenshots/*/*.{png,jpg,webp}', {
   eager: true,
   import: 'default',
 });
-
-const heroStyle = {
-  position: 'relative',
-  overflow: 'hidden',
-  padding: '56px 16px 72px',
-  backgroundImage:
-    'radial-gradient(640px 300px at 50% -20%, rgba(var(--color-primary-rgb), 0.26), transparent 68%),' +
-    'radial-gradient(420px 240px at 88% 110%, rgba(var(--color-ember-rgb), 0.2), transparent 70%),' +
-    'linear-gradient(180deg, var(--header-from), var(--header-to) 75%)',
-};
 
 export default function ModPage() {
   const { slug } = useParams();
@@ -52,13 +42,11 @@ export default function ModPage() {
   return (
     <>
       <Header
-        variant="hero"
-        className="hero-anim"
+        className={styles.hero}
         art={<img className={styles.heroArt} src={mod.icon} alt="" width={128} height={128} />}
         eyebrow={required && `A ${required.name} add-on`}
         title={mod.name}
         subtitle={mod.tagline}
-        style={heroStyle}
       >
         <FloatingEmbers />
         <div className={styles.badges}>
@@ -87,15 +75,10 @@ export default function ModPage() {
 
       {mod.features?.length > 0 && (
         <Section width="xl" title="Key features">
-          <Grid cols={3} gap="md">
+          <Grid cols={3}>
             {mod.features.map((feature, i) => (
               <FadeInOnScroll key={feature.title} delay={(i % 3) * 90}>
-                <Card
-                  className="surface"
-                  variant="compact"
-                  title={feature.title}
-                  text={feature.text}
-                />
+                <Card variant="compact" title={feature.title} text={feature.text} />
               </FadeInOnScroll>
             ))}
           </Grid>
@@ -104,7 +87,7 @@ export default function ModPage() {
 
       <Section width="xl" title="Screenshots">
         {screenshots.length > 0 ? (
-          <Grid cols={2} gap="md">
+          <Grid cols={2}>
             {screenshots.map(([path, src], i) => (
               <FadeInOnScroll key={path} delay={(i % 2) * 90}>
                 <a href={src} target="_blank" rel="noreferrer">
@@ -152,10 +135,9 @@ export default function ModPage() {
             hello@modroll.studio
           </Button>
         </div>
-        {/* without a public repo (e.g. Checks today) the only contact route is email */}
         <p className={styles.contact}>
           Have any questions? Email us at <a href="mailto:hello@modroll.studio">hello@modroll.studio</a>
-          {mod.repo ? (
+          {mod.repo && (
             <>
               {' '}or{' '}
               <a href={`${mod.repo}/issues`} target="_blank" rel="noopener noreferrer">
@@ -163,7 +145,7 @@ export default function ModPage() {
                 <span className="sr-only">Opens in new tab</span>
               </a>
             </>
-          ) : null}
+          )}
           .
         </p>
       </Section>

@@ -1,12 +1,8 @@
-@use '../../styles/tokens' as *;
-
 .grid {
   display: grid;
-  grid-template-columns: repeat(var(--grid-cols, 3), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  gap: var(--space-md);
 }
-.sm { gap: $space-sm; }
-.md { gap: $space-md; }
-.lg { gap: $space-lg; }
 
 @media (max-width: 640px) {
   .grid { grid-template-columns: 1fr; }

@@ -1,27 +1,41 @@
 import { Link, NavLink, useLocation } from 'react-router';
+import Button from '../Button/Button.jsx';
+import mods from '../../data/mods.js';
+import glyph from '../../assets/modroll-glyph.png';
 import styles from './Navbar.module.scss';
 
-// A link with activePrefix (e.g. Mods → /#mods) is marked current on any page under that prefix.
-// show: 'wide' or 'narrow' limits a link to one side of the breakpoint in Navbar.module.scss.
-export default function Navbar({ logo, links = [], children }) {
+// wide screens get one link per mod; below the breakpoint in Navbar.module.scss a single Mods link replaces them
+export default function Navbar() {
   const { pathname } = useLocation();
   return (
     <nav className={styles.navbar}>
-      {logo ? <div className={styles.logo}>{logo}</div> : null}
+      <Link to="/" className={styles.logo} aria-label="Modroll Studio — home">
+        <img className={styles.glyph} src={glyph} alt="" width="48" height="48" aria-hidden="true" />
+        <span className={styles.wordmark}>
+          Modroll <span className={styles.sub}>Studio</span>
+        </span>
+      </Link>
       <ul className={styles.links}>
-        {links.map((link) => (
-          <li key={link.href} className={link.show ? styles[link.show] : undefined}>
-            {link.activePrefix ? (
-              <Link to={link.href} aria-current={pathname.startsWith(link.activePrefix) ? 'page' : undefined}>
-                {link.label}
-              </Link>
-            ) : (
-              <NavLink to={link.href}>{link.label}</NavLink>
-            )}
+        <li>
+          <NavLink to="/">Home</NavLink>
+        </li>
+        {mods.map((mod) => (
+          <li key={mod.slug} className={styles.wide}>
+            <NavLink to={`/mods/${mod.slug}`}>{mod.name}</NavLink>
           </li>
         ))}
+        <li className={styles.narrow}>
+          <Link to="/#mods" aria-current={pathname.startsWith('/mods/') ? 'page' : undefined}>
+            Mods
+          </Link>
+        </li>
       </ul>
-      {children ? <div className={styles.actions}>{children}</div> : null}
+      <div className={styles.actions}>
+        <Button size="sm" variant="ghost" href="https://github.com/modrollstudio" target="_blank" rel="noopener noreferrer">
+          GitHub
+          <span className="sr-only">Opens in new tab</span>
+        </Button>
+      </div>
     </nav>
   );
 }

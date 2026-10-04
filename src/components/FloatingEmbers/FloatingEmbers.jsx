@@ -1,6 +1,5 @@
 import styles from './FloatingEmbers.module.scss';
 
-// Decorative ember particles drifting up. Used in the Home and mod page heroes.
 const EMBERS = [
   { left: '8%', size: 5, delay: 0, duration: 9 },
   { left: '18%', size: 3, delay: 2.2, duration: 11 },
@@ -20,11 +19,10 @@ export default function FloatingEmbers() {
           key={i}
           className={styles.ember}
           style={{
-            left: ember.left,
-            width: `${ember.size}px`,
-            height: `${ember.size}px`,
-            animationDelay: `${ember.delay}s`,
-            animationDuration: `${ember.duration}s`,
+            '--left': ember.left,
+            '--size': `${ember.size}px`,
+            '--delay': `${ember.delay}s`,
+            '--duration': `${ember.duration}s`,
           }}
         />
       ))}

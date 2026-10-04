@@ -1,5 +1,5 @@
-// status must be 'released', 'ongoing', 'next', 'planned', 'paused' or abandoned — anything else renders unstyled
-// Check under Roadmap.jsx for what each displays
+// status must be 'released', 'ongoing', 'next', 'planned', 'paused' or 'abandoned' — anything else renders unstyled;
+// Roadmap.jsx maps each to its label
 const roadmap = [
   {
     title: `Critfall`,
