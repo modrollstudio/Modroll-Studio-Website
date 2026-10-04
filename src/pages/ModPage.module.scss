@@ -20,6 +20,15 @@
   margin: 0 0 $space-md;
   max-width: 70ch;
 }
+.requires {
+  margin: 0 0 $space-md;
+  max-width: 70ch;
+  padding: $space-sm $space-md;
+  border-left: 3px solid $color-primary;
+  background: rgba(var(--color-primary-rgb), 0.08);
+
+  a { color: $color-parchment; font-weight: 700; text-decoration: underline; }
+}
 .links {
   display: flex;
   flex-wrap: wrap;
@@ -37,4 +46,9 @@
   font-size: 14px;
 
   a { text-decoration: underline; }
+}
+.contact {
+  margin: $space-lg 0 0;
+
+  a { color: $color-parchment; text-decoration: underline; }
 }

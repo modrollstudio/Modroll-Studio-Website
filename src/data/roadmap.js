@@ -2,14 +2,14 @@
 // Check under Roadmap.jsx for what each displays
 const roadmap = [
   {
-    title: `Critfall 0.2.6`,
+    title: `Critfall`,
     status: `released`,
-    note: `d20 attack rolls, dice damage, crits and fumbles for Minecraft 1.21.1 — out now on GitHub.`,
+    note: `d20 attack rolls, dice damage, crits and fumbles for Minecraft 1.21.1 — out now on Modrinth and CurseForge.`,
   },
   {
     title: `Store launch`,
     status: `released`,
-    note: `Critfall is live on CurseForge and Modrinth. However, it is highly recommended to wait for Initiative to be released first as it adds a lot of new features that improve the overall experience of using Critfall.`,
+    note: `Critfall is live on CurseForge and Modrinth.`,
   },
   {
     title: `Initiative`,
@@ -19,12 +19,12 @@ const roadmap = [
   {
     title: `Checks`,
     status: `ongoing`,
-    note: `Ability checks and saving throws as well as other RPG mechanics. Other features are welcome to be requested.`,
+    note: `Ability scores, skills, saving throws, character creation and levels 1–20 — in development, no release date yet.`,
   },
   {
     title: `Dungeon Crawl`,
     status: `planned`,
-    note: `Dice-driven dungeon crawl adventure where each room's contents and exits are rolled as you enter them, built on Critfall's combat engine.`,
+    note: `A dice-driven dungeon crawl built on Critfall. The design is still taking shape.`,
   },
 ];
 

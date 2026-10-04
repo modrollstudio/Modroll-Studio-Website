@@ -7,6 +7,14 @@
   background-size: cover;
   background-position: center;
 }
+.eyebrow {
+  margin: 0 0 $space-sm;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $color-primary;
+}
 .title    { margin: 0 0 $space-md; font-size: 40px; }
 .subtitle { margin: 0 0 $space-lg; font-size: 18px; color: $color-muted; }
 .hero {
