@@ -10,7 +10,7 @@ import TypingText from '../components/TypingText/TypingText.jsx';
 import FadeInOnScroll from '../components/FadeInOnScroll/FadeInOnScroll.jsx';
 import FloatingEmbers from '../components/FloatingEmbers/FloatingEmbers.jsx';
 import Roadmap from '../components/Roadmap/Roadmap.jsx';
-import mods, { statusLabel } from '../data/mods.js';
+import mods, { getMod, statusLabel } from '../data/mods.js';
 import roadmap from '../data/roadmap.js';
 import heroBg from '../assets/hero.webp';
 import styles from './Home.module.scss';
@@ -19,7 +19,7 @@ const heroStyle = {
   position: 'relative',
   overflow: 'hidden',
   padding: '96px clamp(24px, 8vw, 120px) 104px',
-  backgroundImage: `linear-gradient(90deg, rgba(16, 20, 31, 0.82), rgba(16, 20, 31, 0.45) 52%, rgba(16, 20, 31, 0) 78%), url(${heroBg})`,
+  backgroundImage: `linear-gradient(90deg, rgba(var(--color-bg-rgb), 0.82), rgba(var(--color-bg-rgb), 0.45) 52%, rgba(var(--color-bg-rgb), 0) 78%), url(${heroBg})`,
   backgroundPosition: 'left center',
 };
 
@@ -64,7 +64,7 @@ export default function Home() {
             <FadeInOnScroll key={mod.slug} delay={i * 90} className={styles.featuredCell}>
               <Card
                 className={`surface ${styles.featured}`}
-                media={<img className={styles.modIcon} src={mod.icon} alt="" width={140} height={140} />}
+                media={<img className={styles.modIcon} src={mod.icon} alt="" width={128} height={128} />}
                 title={mod.name}
                 text={mod.tagline}
                 to={`/mods/${mod.slug}`}
@@ -95,7 +95,7 @@ export default function Home() {
           <FadeInOnScroll>
             <Card
               className="surface"
-              media={<CardArt kind="die" size={64} />}
+              media={<CardArt icon={getMod('critfall').icon} size={128} />}
               title="Dice first"
               text="Real tabletop mechanics — attack rolls, dice damage, crits and fumbles — not just cosmetic randomness."
             />
