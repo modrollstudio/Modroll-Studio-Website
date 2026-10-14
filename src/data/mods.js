@@ -1,6 +1,7 @@
 import critfallIcon from '../assets/critfall-icon.png';
 import initiativeIcon from '../assets/initiative-icon.png';
 import checksIcon from '../assets/checks-icon.png';
+import crawlIcon from '../assets/crawl-icon.png';
 
 // A mod also needs an icon in src/assets and a URL entry in public/sitemap.xml;
 // description[0] doubles as the home card summary.
@@ -149,6 +150,47 @@ const mods = [
     links: [
       { label: 'Modrinth', href: 'https://modrinth.com/mod/critfall-checks' },
       { label: 'CurseForge', href: 'https://www.curseforge.com/minecraft/mc-mods/critfall-checks' },
+    ],
+  },
+  {
+    slug: 'dungeon-crawl',
+    name: 'Dungeon Crawl',
+    fullName: 'Critfall: Dungeon Crawl',
+    icon: crawlIcon,
+    tagline: "Dungeon crawls in the dark for Minecraft, built on Critfall's d20 engine.",
+    status: 'In development',
+    mcVersion: '1.21.1',
+    loaders: ['NeoForge', 'Fabric'],
+    requires: { slug: 'critfall', version: '0.2.13' },
+    description: [
+      'Dungeon Crawl sends your party through a gate into a dungeon of its own, deep in the Depths: clear its rooms, survive its traps in the dark and beat the boss at the bottom. Every run is a new dungeon, laid out fresh from rooms in data packs.',
+      'Critfall rolls every attack, save and check, and Dungeon Crawl never fights itself. With Checks, your own Perception, Investigation and Sleight of Hand count against its traps, and Initiative turns its fights into turn-based encounters; both are optional. It also needs GeckoLib.',
+    ],
+    features: [
+      {
+        title: 'A dungeon for your party',
+        text: 'Step into a Dungeon Gate and anyone who follows within 15 seconds joins your run, in an instance of its own. Leave by the exit gate at the bottom.',
+      },
+      {
+        title: 'New every run',
+        text: 'A winding main path of 30 rooms down to the boss, branches off it with a side boss over better loot, and secret doors to find. The same seed always gives the same dungeon.',
+      },
+      {
+        title: 'Real darkness',
+        text: 'Unlit rooms stay black until you bring a light. Sconces, candles and braziers can be lit as you go, under fog, drifting dust and dripping, creaking sound.',
+      },
+      {
+        title: 'Traps to spot and disarm',
+        text: 'Spike pits, floor and wall spikes, gas vents and poisoned needles. Spot them with passive Perception, search with Investigation and disarm with Sleight of Hand.',
+      },
+      {
+        title: 'Monsters in the dark',
+        text: 'Mobs wait in their rooms with Critfall profiles of their own. Ambushes drop the portcullises behind you, and guards hold their room until you come in.',
+      },
+      {
+        title: 'Built from data packs',
+        text: 'Rooms are structure templates with a JSON file; dungeons, traps and loot tables are data too. Every feature has its own config switch.',
+      },
     ],
   },
 ];
