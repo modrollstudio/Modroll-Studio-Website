@@ -23,8 +23,8 @@ const roadmap = [
   },
   {
     title: `Dungeon Crawl`,
-    status: `planned`,
-    note: `A dice-driven dungeon crawl built on Critfall. The design is still taking shape.`,
+    status: `ongoing`,
+    note: `Party runs through generated dungeons in the dark, with traps, ambushes and secret doors — all rolled through Critfall. The real boss comes next.`,
   },
 ];
 
