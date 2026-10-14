@@ -18,8 +18,8 @@ const roadmap = [
   },
   {
     title: `Checks`,
-    status: `ongoing`,
-    note: `Ability scores, skills, saving throws, character creation and levels 1–20 — in development, no release date yet.`,
+    status: `released`,
+    note: `Ability scores, skills, saving throws, character creation and levels 1–20 — out now on Modrinth and CurseForge.`,
   },
   {
     title: `Dungeon Crawl`,
