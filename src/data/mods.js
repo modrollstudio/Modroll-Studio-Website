@@ -17,7 +17,7 @@ const mods = [
     icon: critfallIcon,
     tagline: 'Tabletop-style d20 combat for Minecraft.',
     status: 'Released',
-    version: '0.2.9',
+    version: '0.2.13',
     mcVersion: '1.21.1',
     loaders: ['NeoForge', 'Fabric'],
     description: [
@@ -109,8 +109,9 @@ const mods = [
     name: 'Checks',
     fullName: 'Critfall: Checks',
     icon: checksIcon,
-    tagline: 'Ability scores, skills and saves for Minecraft.',
-    status: 'In development',
+    tagline: "Ability scores, skills, saves and character creation for Minecraft, built on Critfall's d20 engine.",
+    status: 'Released',
+    version: '0.1.1',
     mcVersion: '1.21.1',
     loaders: ['NeoForge', 'Fabric'],
     requires: { slug: 'critfall', version: '0.2.8' },
@@ -143,6 +144,11 @@ const mods = [
         title: 'Datapack API',
         text: 'Presets, skills and mob scores are all defined in datapacks, and other mods can read scores and roll checks through the public API.',
       },
+    ],
+    repo: 'https://github.com/modrollstudio/Checks',
+    links: [
+      { label: 'Modrinth', href: 'https://modrinth.com/mod/critfall-checks' },
+      { label: 'CurseForge', href: 'https://www.curseforge.com/minecraft/mc-mods/critfall-checks' },
     ],
   },
 ];

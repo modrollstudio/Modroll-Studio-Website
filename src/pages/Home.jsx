@@ -42,7 +42,8 @@ export default function Home() {
             We craft <TypingText words={['dice mods', 'critical hits', 'natural 20s']} />.
           </>
         }
-        subtitle="Modroll Studio is a small independent studio bringing tabletop rules to Minecraft: Critfall for d20 combat, Initiative for turn-based encounters, and Checks — in development — for ability scores and skills."
+        subtitle=
+        "Modroll Studio is a small independent studio bringing tabletop rules to Minecraft: Critfall for d20 combat, Initiative for turn based encounters, Checks for ability scores and skills and Dungeon Crawl (currently in development) for procedural dungeons."
       >
         <FloatingEmbers />
         <div className={styles.heroActions}>
