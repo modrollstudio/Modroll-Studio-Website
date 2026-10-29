@@ -19,10 +19,15 @@ const roadmap = [
   {
     title: `Checks`,
     status: `released`,
-    note: `Ability scores, skills, saving throws, character creation and levels 1–20 — out now on Modrinth and CurseForge.`,
+    note: `Ability scores, skills, saving throws, character creation and levels 1–20 — out now on CurseForge, with Modrinth coming soon.`,
   },
   {
-    title: `Dungeon Crawl`,
+    title: `Headless Horseman`,
+    status: `released`,
+    note: `A Halloween boss: a headless rider and his Gallows Steed, at midnight through October — out now on CurseForge, with Modrinth coming soon.`,
+  },
+  {
+    title: `Depths`,
     status: `ongoing`,
     note: `Party runs through generated dungeons in the dark, with traps, ambushes and secret doors — all rolled through Critfall. The real boss comes next.`,
   },
