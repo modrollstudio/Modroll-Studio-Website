@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Route, Routes, useLocation } from 'react-router';
+import { Navigate, Route, Routes, useLocation } from 'react-router';
 import Navbar from './components/Navbar/Navbar.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import Home from './pages/Home.jsx';
@@ -30,6 +30,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/mods/:slug" element={<ModPage />} />
+          {/* Depths was called Dungeon Crawl */}
+          <Route path="/mods/dungeon-crawl" element={<Navigate to="/mods/depths" replace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
