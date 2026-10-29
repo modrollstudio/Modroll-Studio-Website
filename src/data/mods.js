@@ -1,7 +1,8 @@
 import critfallIcon from '../assets/critfall-icon.png';
 import initiativeIcon from '../assets/initiative-icon.png';
 import checksIcon from '../assets/checks-icon.png';
-import crawlIcon from '../assets/crawl-icon.png';
+import depthsIcon from '../assets/depths-icon.png';
+import horsemanIcon from '../assets/horseman-icon.png';
 
 // A mod also needs an icon in src/assets and a URL entry in public/sitemap.xml;
 // description[0] doubles as the home card summary.
@@ -18,7 +19,7 @@ const mods = [
     icon: critfallIcon,
     tagline: 'Tabletop-style d20 combat for Minecraft.',
     status: 'Released',
-    version: '0.2.13',
+    version: '0.2.17',
     mcVersion: '1.21.1',
     loaders: ['NeoForge', 'Fabric'],
     description: [
@@ -64,10 +65,10 @@ const mods = [
     icon: initiativeIcon,
     tagline: 'Turn-based, initiative-driven combat for Minecraft.',
     status: 'Released',
-    version: '0.1.1',
+    version: '0.2.1',
     mcVersion: '1.21.1',
     loaders: ['NeoForge', 'Fabric'],
-    requires: { slug: 'critfall', version: '0.2.6' },
+    requires: { slug: 'critfall', version: '0.2.16' },
     description: [
       'Initiative turns Minecraft fights into tabletop encounters. The world runs in real time until combat starts, then everyone in the fight rolls initiative and takes structured turns in that order — move, attack, hide, shove or grapple — while the rest of the world carries on.',
       "It is built on Critfall's d20 engine: every attack roll, save, crit and fumble is still resolved by Critfall, and Initiative decides when and in what order those rolls happen. Critfall itself still works on its own without Initiative.",
@@ -100,7 +101,7 @@ const mods = [
     ],
     repo: 'https://github.com/modrollstudio/Initiative',
     links: [
-      // TODO: Modrinth URL unconfirmed (no project found at modrinth.com/mod/critfall-initiative)
+      // TODO: not approved on Modrinth yet; remove todo: true once the project is live
       { label: 'Modrinth', href: 'https://modrinth.com/mod/critfall-initiative', todo: true },
       { label: 'CurseForge', href: 'https://www.curseforge.com/minecraft/mc-mods/critfall-initiative' },
     ],
@@ -112,10 +113,10 @@ const mods = [
     icon: checksIcon,
     tagline: "Ability scores, skills, saves and character creation for Minecraft, built on Critfall's d20 engine.",
     status: 'Released',
-    version: '0.1.1',
+    version: '0.1.3',
     mcVersion: '1.21.1',
     loaders: ['NeoForge', 'Fabric'],
-    requires: { slug: 'critfall', version: '0.2.8' },
+    requires: { slug: 'critfall', version: '0.2.14' },
     description: [
       'Checks adds the character sheet that Critfall leaves out: six ability scores, skills, saving throws and a proficiency bonus for every player and mob, with every die rolled through Critfall.',
       'New players build a character on first join — species, background and class, then their ability scores — and level from 1 to 20 as they play. Critfall and Initiative both work without it.',
@@ -148,23 +149,72 @@ const mods = [
     ],
     repo: 'https://github.com/modrollstudio/Checks',
     links: [
-      { label: 'Modrinth', href: 'https://modrinth.com/mod/critfall-checks' },
+      // TODO: not approved on Modrinth yet; remove todo: true once the project is live
+      { label: 'Modrinth', href: 'https://modrinth.com/mod/critfall-checks', todo: true },
       { label: 'CurseForge', href: 'https://www.curseforge.com/minecraft/mc-mods/critfall-checks' },
     ],
   },
   {
-    slug: 'dungeon-crawl',
-    name: 'Dungeon Crawl',
-    fullName: 'Critfall: Dungeon Crawl',
-    icon: crawlIcon,
+    slug: 'headless-horseman',
+    name: 'Headless Horseman',
+    fullName: 'Critfall: Headless Horseman',
+    icon: horsemanIcon,
+    tagline: "A Halloween boss for Minecraft, built on Critfall's d20 engine.",
+    status: 'Released',
+    version: '0.1.1',
+    mcVersion: '1.21.1',
+    loaders: ['NeoForge', 'Fabric'],
+    requires: { slug: 'critfall', version: '0.2.17' },
+    description: [
+      "A headless rider on a black horse comes at midnight in October, with a rusted sword and his own burning jack o' lantern head. He comes once on Halloween night and by chance on other October midnights, for a player standing under the open sky. If he is still alive at sunrise, he rides off.",
+      "Critfall rolls every attack, damage roll and save. With Checks, saves use your character's Dexterity, and with Initiative he stays out of its turn-based encounters; both are optional. It also needs GeckoLib. He never breaks blocks, and every feature can be turned off in the config, in game from the mod list.",
+    ],
+    features: [
+      {
+        title: 'Midnight in October',
+        text: 'Once on Halloween night and a 10% chance at every other October midnight. The dates, the chance and all-year spawning are in the config; spawn eggs and /summon work too.',
+      },
+      {
+        title: 'Burning sword',
+        text: 'His sword hits add fire damage while he has his head. Crowd him or stand behind him and he sweeps.',
+      },
+      {
+        title: 'The charge',
+        text: 'He charges on his Gallows Steed. Fail a Dexterity save and you are knocked down.',
+      },
+      {
+        title: 'Line of fire',
+        text: 'He throws his head in a line of fire, and a Dexterity save halves the damage. It lands as an item you can carry and throw between players; without it he has no fire and rides straight for whoever holds it.',
+      },
+      {
+        title: 'Rider and steed',
+        text: 'The Horseman and the Gallows Steed each have their own health and Critfall profile. Kill the steed and he fights on foot, without charges.',
+      },
+      {
+        title: 'Trophies',
+        text: "He drops the Rusted Executioner's Sword and The Horseman's Head, which you can wear.",
+      },
+    ],
+    repo: 'https://github.com/modrollstudio/Headless-Horseman',
+    links: [
+      // TODO: not approved on Modrinth yet; remove todo: true once the project is live
+      { label: 'Modrinth', href: 'https://modrinth.com/mod/critfall-headless-horseman', todo: true },
+      { label: 'CurseForge', href: 'https://www.curseforge.com/minecraft/mc-mods/critfall-headless-horseman' },
+    ],
+  },
+  {
+    slug: 'depths',
+    name: 'Depths',
+    fullName: 'Critfall: Depths',
+    icon: depthsIcon,
     tagline: "Dungeon crawls in the dark for Minecraft, built on Critfall's d20 engine.",
     status: 'In development',
     mcVersion: '1.21.1',
     loaders: ['NeoForge', 'Fabric'],
-    requires: { slug: 'critfall', version: '0.2.13' },
+    requires: { slug: 'critfall', version: '0.2.17' },
     description: [
-      'Dungeon Crawl sends your party through a gate into a dungeon of its own, deep in the Depths: clear its rooms, survive its traps in the dark and beat the boss at the bottom. Every run is a new dungeon, laid out fresh from rooms in data packs.',
-      'Critfall rolls every attack, save and check, and Dungeon Crawl never fights itself. With Checks, your own Perception, Investigation and Sleight of Hand count against its traps, and Initiative turns its fights into turn-based encounters; both are optional. It also needs GeckoLib.',
+      'Depths sends your party through a gate into a dungeon of its own, deep in the Depths: clear its rooms, survive its traps in the dark and beat the boss at the bottom. Every run is a new dungeon, laid out fresh from rooms in data packs.',
+      'Critfall rolls every attack, save and check, and Depths never fights itself. With Checks, your own Perception, Investigation and Sleight of Hand count against its traps, and Initiative turns its fights into turn-based encounters; both are optional. It also needs GeckoLib.',
     ],
     features: [
       {
