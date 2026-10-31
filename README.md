@@ -42,15 +42,15 @@ npm run preview  # serve the production build locally
 
 ## Store pages
 
-The CurseForge and Modrinth descriptions share one template. Each mod keeps its text in
-`docs/store/modrinth.md` in its own repo; the images live here in `public/store/`, so
-`https://modroll.studio/store/...` serves them to both sites.
+The CurseForge and Modrinth descriptions share one template. Their text lives in the studio's
+private notes (`Store pages/<mod>/modrinth.md`), not in the mod repos; the images live here in
+`public/store/`, so `https://modroll.studio/store/...` serves them to both sites.
 
 - `tools/store_art.py` draws the section headers (`public/store/headers/`) and the
   Critfall, Checks and Initiative banners. Python 3 and Pillow; edit the script, not
   the images. The Headless Horseman's banner is copied from his repo's `branding/`.
-- `tools/store_page.py <mod repo>` writes `docs/store/curseforge.html` from the
-  Markdown. The CurseForge app shows spoilers open, so a `<details>` option list is
+- `tools/store_page.py <mod>` writes `curseforge.html` beside that mod's Markdown in the
+  notes. The CurseForge app shows spoilers open, so a `<details>` option list is
   cut to its bold rows there.
 - `tools/store_options.py [--main] <config json>` prints a mod's options and their
   defaults from its config file; `--main` prints only each feature's own switch, for
