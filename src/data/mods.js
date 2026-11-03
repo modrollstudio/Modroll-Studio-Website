@@ -19,7 +19,7 @@ const mods = [
     icon: critfallIcon,
     tagline: 'Tabletop-style d20 combat for Minecraft.',
     status: 'Released',
-    version: '0.2.17',
+    version: '0.2.18',
     mcVersion: '1.21.1',
     loaders: ['NeoForge', 'Fabric'],
     description: [
@@ -113,10 +113,10 @@ const mods = [
     icon: checksIcon,
     tagline: "Ability scores, skills, saves and character creation for Minecraft, built on Critfall's d20 engine.",
     status: 'Released',
-    version: '0.1.3',
+    version: '0.1.4',
     mcVersion: '1.21.1',
     loaders: ['NeoForge', 'Fabric'],
-    requires: { slug: 'critfall', version: '0.2.14' },
+    requires: { slug: 'critfall', version: '0.2.18' },
     description: [
       'Checks adds the character sheet that Critfall leaves out: six ability scores, skills, saving throws and a proficiency bonus for every player and mob, with every die rolled through Critfall.',
       'New players build a character on first join — species, background and class, then their ability scores — and level from 1 to 20 as they play. Critfall and Initiative both work without it.',
@@ -161,10 +161,10 @@ const mods = [
     icon: horsemanIcon,
     tagline: "A Halloween boss for Minecraft, built on Critfall's d20 engine.",
     status: 'Released',
-    version: '0.1.1',
+    version: '0.1.2',
     mcVersion: '1.21.1',
     loaders: ['NeoForge', 'Fabric'],
-    requires: { slug: 'critfall', version: '0.2.17' },
+    requires: { slug: 'critfall', version: '0.2.18' },
     description: [
       "A headless rider on a black horse comes at midnight in October, with a rusted sword and his own burning jack o' lantern head. He comes once on Halloween night and by chance on other October midnights, for a player standing under the open sky. If he is still alive at sunrise, he rides off.",
       "Critfall rolls every attack, damage roll and save. With Checks, saves use your character's Dexterity, and with Initiative he stays out of its turn-based encounters; both are optional. It also needs GeckoLib. He never breaks blocks, and every feature can be turned off in the config, in game from the mod list.",
@@ -211,7 +211,7 @@ const mods = [
     status: 'In development',
     mcVersion: '1.21.1',
     loaders: ['NeoForge', 'Fabric'],
-    requires: { slug: 'critfall', version: '0.2.17' },
+    requires: { slug: 'critfall', version: '0.2.18' },
     description: [
       'Depths sends your party through a gate into a dungeon of its own, deep in the Depths: clear its rooms, survive its traps in the dark and beat the boss at the bottom. Every run is a new dungeon, laid out fresh from rooms in data packs.',
       'Critfall rolls every attack, save and check, and Depths never fights itself. With Checks, your own Perception, Investigation and Sleight of Hand count against its traps, and Initiative turns its fights into turn-based encounters; both are optional. It also needs GeckoLib.',
