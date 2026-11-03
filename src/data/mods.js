@@ -197,8 +197,7 @@ const mods = [
     ],
     repo: 'https://github.com/modrollstudio/Headless-Horseman',
     links: [
-      // TODO: not approved on Modrinth yet; remove todo: true once the project is live
-      { label: 'Modrinth', href: 'https://modrinth.com/mod/critfall-headless-horseman', todo: true },
+      { label: 'Modrinth', href: 'https://modrinth.com/mod/critfall-headless-horseman'},
       { label: 'CurseForge', href: 'https://www.curseforge.com/minecraft/mc-mods/critfall-headless-horseman' },
     ],
   },
