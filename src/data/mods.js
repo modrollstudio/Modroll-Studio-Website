@@ -113,7 +113,7 @@ const mods = [
     icon: checksIcon,
     tagline: "Ability scores, skills, saves and character creation for Minecraft, built on Critfall's d20 engine. Out now on CurseForge, with Modrinth coming soon.",
     status: 'Released',
-    version: '0.1.4',
+    version: '0.2.0',
     mcVersion: '1.21.1',
     loaders: ['NeoForge', 'Fabric'],
     requires: { slug: 'critfall', version: '0.2.18' },
