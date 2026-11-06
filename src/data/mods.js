@@ -161,7 +161,7 @@ const mods = [
     icon: horsemanIcon,
     tagline: "A Halloween boss for Minecraft, built on Critfall's d20 engine.",
     status: 'Released',
-    version: '0.1.2',
+    version: '0.2.0',
     mcVersion: '1.21.1',
     loaders: ['NeoForge', 'Fabric'],
     requires: { slug: 'critfall', version: '0.2.18' },
