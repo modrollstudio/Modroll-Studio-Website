@@ -164,7 +164,7 @@ const mods = [
     version: '0.2.0',
     mcVersion: '1.21.1',
     loaders: ['NeoForge', 'Fabric'],
-    requires: { slug: 'critfall', version: '0.2.18' },
+    requires: { slug: 'critfall', version: '0.2.19' },
     description: [
       "A headless rider on a black horse comes at midnight in October, with a rusted sword and his own burning jack o' lantern head. He comes once on Halloween night and by chance on other October midnights, for a player standing under the open sky. If he is still alive at sunrise, he rides off.",
       "Critfall rolls every attack, damage roll and save. With Checks, saves use your character's Dexterity, and with Initiative he stays out of its turn-based encounters; both are optional. It also needs GeckoLib. He never breaks blocks, and every feature can be turned off in the config, in game from the mod list.",
