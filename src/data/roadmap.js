@@ -24,7 +24,7 @@ const roadmap = [
   {
     title: `Headless Horseman`,
     status: `released`,
-    note: `A Halloween boss: a headless rider and his Gallows Steed, at midnight through October — out now on CurseForge, with Modrinth coming soon.`,
+    note: `A Halloween boss: a headless rider and his Gallows Steed, at midnight through October.`,
   },
   {
     title: `Depths`,
